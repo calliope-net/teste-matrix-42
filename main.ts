@@ -35,7 +35,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
         . . . . . . # # # # . . # # . .
         . . . . . . . . . . # # # # . .
         `)
-    matrix.writeImageOLED(i1, 5, 15)
+    matrix.writeImageOLED(i1, 0, 0)
     i2 = matrix.matrix32x32(`
         . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
         . . . . . . . # # # . # # # # . . . . . . . . . . . . . . . . .
@@ -142,15 +142,15 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
 })
 input.onButtonEvent(Button.A, ButtonEvent.Hold, function () {
     matrix.comment("zeichnet Linie im Buffer")
-    for (let Index = 0; Index <= 127; Index++) {
-        matrix.setPixel(Index, 0, false)
+    for (let Index = 0; Index <= 63; Index++) {
+        matrix.setPixel(Index, Index, true)
     }
     matrix.comment("schreibt 1 mal am Ende auf Display")
     matrix.writeDisplay()
 })
 input.onButtonEvent(Button.B, ButtonEvent.Hold, function () {
     matrix.comment("löscht Linie im Buffer")
-    for (let Index2 = 0; Index2 <= 127; Index2++) {
+    for (let Index2 = 0; Index2 <= 63; Index2++) {
         matrix.setPixel(Index2, Index2, false)
         matrix.comment("schreibt nach jedem Pixel das ganze Display")
         matrix.writeDisplay()
@@ -167,5 +167,5 @@ let i2: Image = null
 let i1: Image = null
 let y = 0
 let x = 0
-matrix.init(matrix.ePages.y128, false)
+matrix.init(matrix.ePages.y64, false, true, matrix.eI2C.I2C_x3D)
 matrix.clearMatrix()
