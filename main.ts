@@ -65,7 +65,7 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
         # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . #
         # # . # # # # # # # # . . # # # . # # # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # # . . . . # # # #
         `)
-    matrix.writeImage(i3, 0, 0)
+    matrix.writeImage(i3, 0, 64)
     matrix.writeDisplay()
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
@@ -115,5 +115,5 @@ function Konfiguration () {
 }
 let i1: Image = null
 let i3: Image = null
-matrix.init(matrix.ePages.y64)
+matrix.init(matrix.ePages.y128)
 matrix.clearMatrix()
