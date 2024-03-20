@@ -79,15 +79,15 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     matrix.clearMatrix()
     i1 = matrix.matrix16x8(`
         # # . . . . . . . . . . . . # #
-        # . . . . . . . . . . . . . . #
-        . . . . . . . . . . . . . . . .
-        . . . . . . . # # . . . . . . .
-        . . . . . . . # # . . . . . . .
-        . . . . . . . . . . . . . . . .
-        # . . . . . . . . . . . . . . #
+        # . . . # . . . . . . . . . . #
+        . . . . # . . . . . . . . . . .
+        . . . . # . . # # . . . . . . .
+        . . . . # . . # # . . . . . . .
+        . . . . # . . . . . . . . . . .
+        # . . . # . . . . . . . . . . #
         # # . . . . . . . . . . . . # #
         `)
-    matrix.writeImage(i1, 0, 0, 7, false)
+    matrix.writeImage(i1, 0, 0, 6, false)
     matrix.writeDisplay()
 })
 input.onButtonEvent(Button.A, ButtonEvent.Hold, function () {
