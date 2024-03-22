@@ -8,10 +8,11 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     matrix.clearMatrix()
-    matrix.rasterCircle(32, 32, 32)
-    matrix.rasterCircle(32, 32, 30)
-    matrix.line(10, 60, 100, 9, true)
-    matrix.writeDisplay()
+    for (let Index = 0; Index <= 7; Index++) {
+        i1 = matrix.writeCharImage(Index + 48)
+        matrix.writeImage(i1, Index * 4, Index)
+        matrix.writeDisplay()
+    }
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     matrix.clearMatrix()
@@ -45,5 +46,6 @@ function Konfiguration () {
     matrix.comment("1 Erweiterung:")
     matrix.comment("calliope-net/matrix")
 }
+let i1: Image = null
 matrix.init(matrix.ePages.y64, false)
 matrix.clearMatrix()
