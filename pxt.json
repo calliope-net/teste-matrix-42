@@ -4,7 +4,7 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "matrix": "github:calliope-net/matrix#v0.0.7"
+        "matrix": "github:calliope-net/matrix#master"
     },
     "files": [
         "main.blocks",
@@ -21,7 +21,7 @@
     "supportedTargets": [
         "calliopemini"
     ],
-    "preferredEditor": "tsprj",
+    "preferredEditor": "blocksprj",
     "yotta": {
         "config": {
             "microbit-dal": {

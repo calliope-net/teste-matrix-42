@@ -8,9 +8,9 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     matrix.clearMatrix()
-    for (let Index = 0; Index <= 7; Index++) {
-        i1 = matrix.writeCharImage(Index + 48)
-        matrix.writeImage(i1, Index * 4, Index)
+    for (let Index = 0; Index <= 8; Index++) {
+        t = "ÄÖÜäöüß€°"
+        matrix.writeImage(matrix.writeCharImage(matrix.charCodeAt(t, Index)), Index * 8, Index, 1)
         matrix.writeDisplay()
     }
 })
@@ -46,6 +46,6 @@ function Konfiguration () {
     matrix.comment("1 Erweiterung:")
     matrix.comment("calliope-net/matrix")
 }
-let i1: Image = null
+let t = ""
 matrix.init(matrix.ePages.y64, false)
 matrix.clearMatrix()
