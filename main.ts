@@ -1,8 +1,8 @@
 input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
-    matrix.rasterCircle(64, 64, 60)
+    matrix.rasterCircle(30, 23, 24)
     matrix.writeDisplay()
     for (let Index = 0; Index <= 10; Index++) {
-        matrix.hour_mark(Index + 1, 64, 64, 0, 45)
+        matrix.hour_mark(Index + 1, 30, 23, 2, 16)
         matrix.writeDisplay()
     }
 })
@@ -45,5 +45,5 @@ function Konfiguration () {
     matrix.comment("1 Erweiterung:")
     matrix.comment("calliope-net/matrix")
 }
-matrix.init(matrix.ePages.y128, true)
+matrix.init(matrix.ePages.y64, false)
 matrix.clearMatrix()
