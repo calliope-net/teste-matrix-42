@@ -4,7 +4,7 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "matrix": "github:calliope-net/matrix#master"
+        "matrix": "github:calliope-net/matrix#v0.0.8"
     },
     "files": [
         "main.blocks",

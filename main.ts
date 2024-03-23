@@ -3,15 +3,15 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
     matrix.writeDisplay()
     for (let Index = 0; Index <= 10; Index++) {
         matrix.hour_mark(Index + 1, 30, 23, 2, 16)
-        matrix.writeDisplay()
+        matrix.writeDisplay(0, 7, matrix.eI2C.I2C_x3D)
     }
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     matrix.clearMatrix()
     for (let Index = 0; Index <= 8; Index++) {
         t = "ÄÖÜäöüß€°"
-        matrix.writeImage(matrix.writeCharImage(matrix.charCodeAt(t, Index)), Index * 8, Index, 1)
-        matrix.writeDisplay()
+        matrix.writeImage(matrix.writeCharImage(matrix.charCodeAt(t, Index)), Index * 8, Index, 1, false)
+        matrix.writeDisplay(0, 15, matrix.eI2C.I2C_x3D)
     }
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
@@ -47,5 +47,6 @@ function Konfiguration () {
     matrix.comment("calliope-net/matrix")
 }
 let t = ""
-matrix.init(matrix.ePages.y64, false)
+matrix.init(matrix.ePages.y128)
+matrix.init(matrix.ePages.y64, false, false, matrix.eI2C.I2C_x3D)
 matrix.clearMatrix()
