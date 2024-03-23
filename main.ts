@@ -8,11 +8,8 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     matrix.clearMatrix()
-    for (let Index = 0; Index <= 8; Index++) {
-        t = "ÄÖÜäöüß€°"
-        matrix.writeImage(matrix.writeCharImage(matrix.charCodeAt(t, Index)), Index * 8, Index, 1, false)
-        matrix.writeDisplay(0, 15, matrix.eI2C.I2C_x3D)
-    }
+    matrix.writeImage(matrix.writeCharImage(matrix.charCode("ü")), 0, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f2), matrix.oled_eFaktor(matrix.eFaktor.f2))
+    matrix.writeDisplay(0, 7, matrix.eI2C.I2C_x3D)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     matrix.clearMatrix()
@@ -46,7 +43,6 @@ function Konfiguration () {
     matrix.comment("1 Erweiterung:")
     matrix.comment("calliope-net/matrix")
 }
-let t = ""
 matrix.init(matrix.ePages.y128)
 matrix.init(matrix.ePages.y64, false, false, matrix.eI2C.I2C_x3D)
 matrix.clearMatrix()
