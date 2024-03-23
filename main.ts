@@ -7,8 +7,19 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
     }
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
+    i1 = matrix.matrix8x8(`
+        # . . . # # # #
+        . . . # # . . #
+        . . # . # . . .
+        . # . . # . . .
+        # . . . # . . .
+        . . . . # . . .
+        . . . . # . . .
+        # . . . # . . #
+        `)
     matrix.clearMatrix()
-    matrix.writeImageArray(matrix.writeTextImageArray("ÄÖÜß"), 0, 0, 7, 1)
+    matrix.writeImage(i1, 0, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.spiegeln), 32, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
     matrix.writeDisplay(0, 7, matrix.eI2C.I2C_x3D)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
@@ -43,6 +54,7 @@ function Konfiguration () {
     matrix.comment("1 Erweiterung:")
     matrix.comment("calliope-net/matrix")
 }
+let i1: Image = null
 matrix.init(matrix.ePages.y128)
 matrix.init(matrix.ePages.y64, false, false, matrix.eI2C.I2C_x3D)
 matrix.clearMatrix()
