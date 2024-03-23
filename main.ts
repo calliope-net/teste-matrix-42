@@ -8,7 +8,7 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     matrix.clearMatrix()
-    matrix.writeImage(matrix.writeCharImage(matrix.charCode("ü")), 0, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f2), matrix.oled_eFaktor(matrix.eFaktor.f2))
+    matrix.writeImageArray(matrix.writeTextImageArray("ÄÖÜß"), 0, 0, 7, 1)
     matrix.writeDisplay(0, 7, matrix.eI2C.I2C_x3D)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
