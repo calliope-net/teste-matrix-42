@@ -7,16 +7,7 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
     }
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    i1 = matrix.matrix8x8(`
-        # . . . # # # #
-        . . . # # . . #
-        . . # . # . . .
-        . # . . # . . .
-        # . . . # . . .
-        . . . . # . . .
-        . . . . # . . .
-        # . . . # . . #
-        `)
+    i1 = matrix.writeHexImage("7F09192956")
     matrix.clearMatrix()
     matrix.writeImage(i1, 0, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
     matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.links), 32, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
@@ -31,7 +22,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     matrix.rasterCircle(64, 64, 60)
     matrix.writeDisplay()
     for (let Index = 0; Index <= 55; Index++) {
-        matrix.minute_line(Index, 64, 64, 50, 60)
+        matrix.minute_mark(Index, 64, 64, 50, 60)
         matrix.writeDisplay()
     }
 })
@@ -61,4 +52,6 @@ function Konfiguration () {
 let i1: Image = null
 matrix.init(matrix.ePages.y128)
 matrix.init(matrix.ePages.y64, false, false, matrix.eI2C.I2C_x3D)
-matrix.clearMatrix()
+matrix.writeDisplay()
+matrix.writeDisplay(0, 7, matrix.eI2C.I2C_x3D)
+basic.showNumber(matrix.getArray().length)
