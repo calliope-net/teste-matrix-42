@@ -7,14 +7,14 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
     }
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    i1 = matrix.writeHexImage("7F09192956")
+    i1 = matrix.charImage(matrix.charCode("R"))
     matrix.clearMatrix()
-    matrix.writeImage(i1, 0, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
-    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.links), 32, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
-    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.rechts), 64, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
-    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.halb), 96, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
-    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.yspiegeln), 0, 32, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
-    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.xspiegeln), 32, 32, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
+    matrix.writeImage(i1, 0, 0)
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.links), 32, 0)
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.rechts), 64, 0)
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.halb), 96, 0)
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.yspiegeln), 0, 32)
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.xspiegeln), 32, 32)
     matrix.writeDisplay(0, 7, matrix.eI2C.I2C_x3D)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
@@ -35,12 +35,10 @@ input.onButtonEvent(Button.A, ButtonEvent.Hold, function () {
     matrix.writeDisplay()
 })
 input.onButtonEvent(Button.B, ButtonEvent.Hold, function () {
-    matrix.comment("löscht Linie im Buffer")
-    for (let Index2 = 0; Index2 <= 63; Index2++) {
-        matrix.setPixel(Index2, Index2, false)
-        matrix.comment("schreibt nach jedem Pixel das ganze Display")
-        matrix.writeDisplay()
-    }
+    matrix.clearMatrix()
+    matrix.writeTextImageArray("ABC-123", 0, 0, 7, 2, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f2), matrix.oled_eFaktor(matrix.eFaktor.f2))
+    matrix.writeTextImageArray("ABC-123", 64, 64)
+    matrix.writeDisplay()
 })
 function Konfiguration () {
     matrix.comment("Calliope V2 erforderlich (32 KB RAM)")
