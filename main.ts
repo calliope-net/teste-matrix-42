@@ -19,7 +19,11 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
         `)
     matrix.clearMatrix()
     matrix.writeImage(i1, 0, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
-    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.spiegeln), 32, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.links), 32, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.rechts), 64, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.halb), 96, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.yspiegeln), 0, 32, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.xspiegeln), 32, 32, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
     matrix.writeDisplay(0, 7, matrix.eI2C.I2C_x3D)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
