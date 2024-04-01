@@ -8,9 +8,9 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     matrix.clearMatrix()
-    i1 = matrix.charImage(matrix.charCode("R"))
+    i1 = matrix.hexImage("7F09192946")
     matrix.writeImage(i1, 0, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3))
-    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.links), 32, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3))
+    matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.links), 32, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
     matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.rechts), 64, 0)
     matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.halb), 96, 0)
     matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.yspiegeln), 0, 32)
@@ -27,11 +27,11 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     }
 })
 input.onButtonEvent(Button.A, ButtonEvent.Hold, function () {
-    matrix.writeDisplayAnimation(matrix.beispielRegen16x8(), 0, 0, matrix.oled_eFaktor(matrix.eFaktor.f6), 300, 0, 7, matrix.eI2C.I2C_x3D)
+    matrix.writeDisplayAnimation(matrix.beispielRegen16x8(), 0, 0, matrix.oled_eFaktor(matrix.eFaktor.f1), matrix.oled_eFaktor(matrix.eFaktor.f4), 500, 0, 15, matrix.eI2C.I2C_x3D)
 })
 input.onButtonEvent(Button.B, ButtonEvent.Hold, function () {
     matrix.clearMatrix()
-    matrix.writeTextImageArray("XYZ=098", 0, 32, 18, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3))
+    matrix.writeTextImageArray("XYZ=098", 0, 32, 18, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f1))
     matrix.writeTextImageArray("ABC-123", 0, 0, 12, 2, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f2))
     matrix.writeTextImageArray("ABC-123", 64, 64)
     matrix.writeDisplay()
