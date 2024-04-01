@@ -8,7 +8,7 @@ input.onButtonEvent(Button.AB, ButtonEvent.Click, function () {
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     matrix.clearMatrix()
-    i1 = matrix.hexImage8x8("91080402FF010183")
+    i1 = matrix.hexImage8x8("427F406251494946")
     matrix.writeImage(i1, 0, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3))
     matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.links), 32, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3), matrix.oled_eFaktor(matrix.eFaktor.f3))
     matrix.writeImage(matrix.imageDrehen(i1, matrix.eZeichenDrehen.rechts), 64, 0, matrix.eTransparent.u, matrix.oled_eFaktor(matrix.eFaktor.f3))
