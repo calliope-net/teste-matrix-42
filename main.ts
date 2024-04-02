@@ -38,7 +38,6 @@ input.onButtonEvent(Button.B, ButtonEvent.Hold, function () {
 })
 function Konfiguration () {
     matrix.comment("Calliope V2 erforderlich (32 KB RAM)")
-    matrix.comment("\"bluetooth\": {\"device_info_service\": 0}")
     matrix.comment("Grove - OLED Display 1.12 (SH1107) V3.0 - SPI/IIC -3.3V/5V")
     matrix.comment("calliope-net/teste-matrix-42")
     matrix.comment("1 Erweiterung:")
@@ -47,13 +46,9 @@ function Konfiguration () {
 input.onButtonEvent(Button.AB, ButtonEvent.Hold, function () {
     matrix.comment("2. Display: Kreis mit Stunden")
     matrix.rasterCircle(30, 23, 24)
-    matrix.writeImage(matrix.imageDrehen(matrix.digitImage(3), matrix.eZeichenDrehen.rechts), 47, 21)
-    matrix.writeImage(matrix.digitImage(6), 28, 40)
-    matrix.writeImage(matrix.imageDrehen(matrix.digitImage(9), matrix.eZeichenDrehen.links), 6, 18)
-    matrix.writeImage(matrix.hexImage8x8("427F406251494946"), 26, 0)
     matrix.writeDisplay(0, 15, matrix.eI2C.I2C_x3D)
-    for (let Index = 0; Index <= 11; Index++) {
-        matrix.hour_mark(Index, 30, 23, 4, 13)
+    for (let Index = 0; Index <= 10; Index++) {
+        matrix.hour_mark(Index + 1, 30, 23, 2, 16)
         matrix.writeDisplay(0, 7, matrix.eI2C.I2C_x3D)
     }
 })
